@@ -129,6 +129,9 @@ class StepperDemoState extends State<StepperDemo> {
           onStepTapped: (step) {
             setState(() {
               currentStep = step;
+              if (currentStep == 3) {
+                submitData();
+              }
             });
           },
           onStepContinue: () {
