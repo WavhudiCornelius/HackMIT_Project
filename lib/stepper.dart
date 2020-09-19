@@ -44,8 +44,8 @@ class StepperDemoState extends State<StepperDemo> {
           post = value;
         },
         decoration: InputDecoration(
-            hintText: 'What you are thinking?',
-            helperText: 'This has to be over two characters in length.'),
+            hintText: 'What are you thinking?',
+            helperText: 'Brightly detail your topic! 100 characters left'),
       ),
       isActive: true,
     ),
@@ -64,8 +64,8 @@ class StepperDemoState extends State<StepperDemo> {
           why1 = value;
         },
         decoration: InputDecoration(
-            hintText: 'Tell us a little bit about it',
-            helperText: 'This has to be over two characters in length.'),
+            hintText: 'Tell us a little bit about it.',
+            helperText: '60 characters left.'),
       ),
       isActive: true,
     ),
@@ -84,8 +84,8 @@ class StepperDemoState extends State<StepperDemo> {
           why2 = value;
         },
         decoration: InputDecoration(
-            hintText: 'Just more a little bit about it',
-            helperText: 'This has to be over two characters in length.'),
+            hintText: 'Just more a little bit.',
+            helperText: '100 characters left.'),
       ),
       state: StepState.complete,
       isActive: true,
@@ -106,7 +106,7 @@ class StepperDemoState extends State<StepperDemo> {
         },
         decoration: InputDecoration(
             hintText: 'So, why?',
-            helperText: 'This has to be over two characters in length.'),
+            helperText: 'Did you think well? You can change the world if you want.'),
       ),
       state: StepState.complete,
       isActive: true,
@@ -118,7 +118,7 @@ class StepperDemoState extends State<StepperDemo> {
       // Appbar
       appBar: AppBar(
         // Title
-        title: Text("Simple Stepper Demo"),
+        title: Text("So, why?"),
       ),
       // Body
       body: Container(
@@ -127,11 +127,9 @@ class StepperDemoState extends State<StepperDemo> {
           steps: steps,
           type: StepperType.vertical,
           onStepTapped: (step) {
-            setState(() async {
+            setState(() {
               currentStep = step;
-              if (currentStep == 3) {
-                await submitData();
-              }
+              
             });
           },
           onStepContinue: () {
@@ -139,7 +137,7 @@ class StepperDemoState extends State<StepperDemo> {
               if (currentStep < steps.length - 1) {
                 currentStep = currentStep + 1;
               } else {
-                currentStep = 0;
+                submitData();
               }
             });
           },
