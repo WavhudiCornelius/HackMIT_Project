@@ -1,5 +1,6 @@
 import 'package:HackMIT_Project/Services/posting.dart';
 import 'package:HackMIT_Project/Widgets/custom_fab.dart';
+import 'package:HackMIT_Project/stepper.dart';
 import '../constants.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,9 @@ class HomeScreen extends StatelessWidget {
             buttonSize: 70.0,
             iconColor: kWhite,
             iconSize: 36.0,
-            onTap: () {},
+            onTap: () {
+              _navigateToNextScreen(context);
+            },
           ),
         ),
         // child: FlatButton(
@@ -42,5 +45,8 @@ class HomeScreen extends StatelessWidget {
         //     child: Text('test')),
       ),
     );
+  }
+  void _navigateToNextScreen(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => StepperDemo.init(username: "Pablo")));
   }
 }
