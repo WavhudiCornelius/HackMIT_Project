@@ -15,23 +15,79 @@ class StepperDemoState extends State<StepperDemo> {
   List<Step> steps = [
     Step(
       title: Text('Create a topic'),
-      content: Text('Hello!'),
+      content: TextFormField(
+        // ignore: missing_return
+        validator: (value) {
+          if (value.isEmpty) {
+            return "You can't have an empty name.";
+          }
+
+          if (value.length < 100) {
+            return "You need write a little bit.";
+          }
+        },
+        decoration: InputDecoration(
+            hintText: 'What you are thinking?',
+            helperText: 'This has to be over two characters in length.'),
+      ),
       isActive: true,
     ),
     Step(
       title: Text('Why?'),
-      content: Text('World!'),
+      content: TextFormField(
+        // ignore: missing_return
+        validator: (value) {
+          if (value.isEmpty) {
+            return "You can't have an empty name.";
+          }
+
+          if (value.length < 40) {
+            return "You need write a little bit.";
+          }
+        },
+        decoration: InputDecoration(
+            hintText: 'Tell us a little bit about it',
+            helperText: 'This has to be over two characters in length.'),
+      ),
       isActive: true,
     ),
     Step(
       title: Text('Why?'),
-      content: Text('Hello World!'),
+      content: TextFormField(
+        // ignore: missing_return
+        validator: (value) {
+          if (value.isEmpty) {
+            return "You can't have an empty name.";
+          }
+
+          if (value.length < 20) {
+            return "You need write a little bit.";
+          }
+        },
+        decoration: InputDecoration(
+            hintText: 'Just more a little bit about it',
+            helperText: 'This has to be over two characters in length.'),
+      ),
       state: StepState.complete,
       isActive: true,
     ),
     Step(
       title: Text('Why?'),
-      content: Text('Hello World!'),
+      content: TextFormField(
+        // ignore: missing_return
+        validator: (value) {
+          if (value.isEmpty) {
+            return "You can't have an empty name.";
+          }
+
+          if (value.length < 20) {
+            return "You need write a little bit.";
+          }
+        },
+        decoration: InputDecoration(
+            hintText: 'So, why?',
+            helperText: 'This has to be over two characters in length.'),
+      ),
       state: StepState.complete,
       isActive: true,
     ),
