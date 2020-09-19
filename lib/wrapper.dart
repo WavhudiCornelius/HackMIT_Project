@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import './Screens/home_screen.dart';
 import './Screens/trending_screen.dart';
 
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
+
 class Wrapper extends StatefulWidget {
   // Wrapper({Key key, this.title}) : super(key: key);
 
@@ -35,13 +37,13 @@ class _WrapperState extends State<Wrapper> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.home,
+              FeatherIcons.home,
             ),
             title: Text('Home'),
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.settings,
+              FeatherIcons.trendingUp,
             ),
             title: Text(
               'Settings',

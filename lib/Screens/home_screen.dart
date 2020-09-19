@@ -1,4 +1,6 @@
 import 'package:HackMIT_Project/Services/posting.dart';
+import 'package:HackMIT_Project/Widgets/custom_fab.dart';
+import '../constants.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,27 +11,36 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Container(
-          // child: FlatButton(
-          //     onPressed: () async {
-          //       // await posting.addPost(
-          //       // username: 'ajay',
-          //       // post: 'this post',
-          //       // why1: 'hello',
-          //       // why2: 'hhehe',
-          //       // why3: 'plss');
-          //       await posting.replyPost(
-          //           postedUserName: 'ajay',
-          //           replierName: 'ashish',
-          //           docId: 'FFsTqHRU38pzI1sGkcuMX',
-          //           reply: 'this post',
-          //           why1: 'hello',
-          //           why2: 'hhehe',
-          //           why3: 'plss');
-          //       // await posting.deletePost(
-          //       //     username: 'ajay', docId: 'Bwim9RHEZ6ZMQeEGBdYE');
-          //     },
-          //     child: Text('test')),
+        child: Center(
+          child: CustomFAB(
+            buttonColor: kPink,
+            buttonSize: 70.0,
+            iconColor: kWhite,
+            iconSize: 36.0,
+            onTap: () {},
           ),
+        ),
+        // child: FlatButton(
+        //     onPressed: () async {
+        //       // await posting.addPost(
+        //       // username: 'ajay',
+        //       // post: 'this post',
+        //       // why1: 'hello',
+        //       // why2: 'hhehe',
+        //       // why3: 'plss');
+        //       await posting.replyPost(
+        //           postedUserName: 'ajay',
+        //           replierName: 'ashish',
+        //           docId: 'FFsTqHRU38pzI1sGkcuMX',
+        //           reply: 'this post',
+        //           why1: 'hello',
+        //           why2: 'hhehe',
+        //           why3: 'plss');
+        //       // await posting.deletePost(
+        //       //     username: 'ajay', docId: 'Bwim9RHEZ6ZMQeEGBdYE');
+        //     },
+        //     child: Text('test')),
+      ),
     );
   }
 }
