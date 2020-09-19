@@ -37,4 +37,28 @@ class Posting {
   deletePost({String username, String docId}) async {
     await posts.document(username).collection('posts').document(docId).delete();
   }
+
+  replyPost({
+    String postedUserName,
+    String replierName,
+    String docId,
+    String why1,
+    String why2,
+    String why3,
+    String reply,
+  }) async {
+    await posts
+        .document(postedUserName)
+        .collection('posts')
+        .document(docId)
+        .collection('replies')
+        .add({
+      'time': Timestamp.now(),
+      'replier': replierName,
+      'reply': reply,
+      'why1': why1,
+      'why2': why2,
+      'why3': why3
+    });
+  }
 }

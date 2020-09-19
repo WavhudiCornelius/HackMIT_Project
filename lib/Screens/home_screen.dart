@@ -12,13 +12,21 @@ class HomeScreen extends StatelessWidget {
           // child: FlatButton(
           //     onPressed: () async {
           //       // await posting.addPost(
-          //       //     username: 'ajay',
-          //       //     post: 'this post',
-          //       //     why1: 'hello',
-          //       //     why2: 'hhehe',
-          //       //     why3: 'plss');
-          //     await posting.deletePost(
-          //           username: 'ajay', docId: 'Bwim9RHEZ6ZMQeEGBdYE');
+          //       // username: 'ajay',
+          //       // post: 'this post',
+          //       // why1: 'hello',
+          //       // why2: 'hhehe',
+          //       // why3: 'plss');
+          //       await posting.replyPost(
+          //           postedUserName: 'ajay',
+          //           replierName: 'ashish',
+          //           docId: 'FFsTqHRU38pzI1sGkcuMX',
+          //           reply: 'this post',
+          //           why1: 'hello',
+          //           why2: 'hhehe',
+          //           why3: 'plss');
+          //       // await posting.deletePost(
+          //       //     username: 'ajay', docId: 'Bwim9RHEZ6ZMQeEGBdYE');
           //     },
           //     child: Text('test')),
           ),
