@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class StepperDemo extends StatefulWidget {
   StepperDemo() : super();
 
-  final String title = "Stepper Demo";
+  final String title = "Stepper";
 
   @override
   StepperDemoState createState() => StepperDemoState();
