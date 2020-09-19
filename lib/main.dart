@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './Screens/home_screen.dart';
+import 'wrapper.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,10 +12,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'SoWhy',
-      initialRoute: HomeScreen.route,
-      routes: {
-        HomeScreen.route: (context) => HomeScreen(),
-      },
+      home: Wrapper(),
+      // initialRoute: HomeScreen.route,
+      // routes: {
+      //   HomeScreen.route: (context) => HomeScreen(),
+      // },
     );
   }
 }
