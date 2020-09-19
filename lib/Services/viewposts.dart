@@ -19,7 +19,7 @@ class _ViewRequestsState extends State<ViewRequests> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: kdarkBlue,
+          backgroundColor: kDarkBlue,
           title: Text('Posts by ${widget.postsOf}'),
         ),
         body: StreamBuilder<QuerySnapshot>(
@@ -82,7 +82,7 @@ class _ViewRequestsState extends State<ViewRequests> {
               }
               return MaterialApp(
                   home: Scaffold(
-                backgroundColor: kdarkBlue,
+                backgroundColor: kDarkBlue,
                 body: ListView(
                   children: doclist,
                 ),

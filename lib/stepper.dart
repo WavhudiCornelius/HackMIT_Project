@@ -127,10 +127,10 @@ class StepperDemoState extends State<StepperDemo> {
           steps: steps,
           type: StepperType.vertical,
           onStepTapped: (step) {
-            setState(() {
+            setState(() async {
               currentStep = step;
               if (currentStep == 3) {
-                submitData();
+                await submitData();
               }
             });
           },
