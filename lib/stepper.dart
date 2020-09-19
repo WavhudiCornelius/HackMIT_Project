@@ -1,8 +1,16 @@
+import 'package:HackMIT_Project/Services/posting.dart';
 import 'package:flutter/material.dart';
 
-class StepperDemo extends StatefulWidget {
-  StepperDemo() : super();
+final Posting postData = Posting();
+String userName, post, why1, why2, why3;
 
+class StepperDemo extends StatefulWidget {
+  StepperDemo(this.username) : super();
+  factory StepperDemo.init({@required username}) {
+    userName = username;
+    return StepperDemo(username);
+  }
+  final String username;
   final String title = "Stepper";
 
   @override
@@ -11,6 +19,14 @@ class StepperDemo extends StatefulWidget {
 
 class StepperDemoState extends State<StepperDemo> {
   //
+
+  final Posting postData = Posting();
+
+  submitData() async {
+    await postData.addPost(
+        username: userName, post: post, why1: why1, why2: why2, why3: why3);
+  }
+
   int currentStep = 0;
   List<Step> steps = [
     Step(
@@ -25,6 +41,7 @@ class StepperDemoState extends State<StepperDemo> {
           if (value.length < 100) {
             return "You need write a little bit.";
           }
+          post = value;
         },
         decoration: InputDecoration(
             hintText: 'What you are thinking?',
@@ -44,6 +61,7 @@ class StepperDemoState extends State<StepperDemo> {
           if (value.length < 40) {
             return "You need write a little bit.";
           }
+          why1 = value;
         },
         decoration: InputDecoration(
             hintText: 'Tell us a little bit about it',
@@ -63,6 +81,7 @@ class StepperDemoState extends State<StepperDemo> {
           if (value.length < 20) {
             return "You need write a little bit.";
           }
+          why2 = value;
         },
         decoration: InputDecoration(
             hintText: 'Just more a little bit about it',
@@ -83,6 +102,7 @@ class StepperDemoState extends State<StepperDemo> {
           if (value.length < 20) {
             return "You need write a little bit.";
           }
+          why3 = value;
         },
         decoration: InputDecoration(
             hintText: 'So, why?',
