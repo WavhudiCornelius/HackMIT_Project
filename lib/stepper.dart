@@ -147,10 +147,9 @@ class StepperDemoState extends State<StepperDemo> {
                     why1: why1,
                     why2: why2,
                     why3: why3);
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => Wrapper()));
               }
-
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => Wrapper()));
             });
           },
           onStepCancel: () {
