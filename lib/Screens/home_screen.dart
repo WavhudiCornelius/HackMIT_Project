@@ -1,8 +1,7 @@
-import 'package:HackMIT_Project/Services/viewposts.dart';
 import 'package:flutter/material.dart';
 
+import '../Services/viewposts.dart';
 import '../Services/posting.dart';
-
 import '../constants.dart';
 
 class HomeScreen extends StatelessWidget {

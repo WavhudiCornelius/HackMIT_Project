@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './Screens/home_screen.dart';
-import './stepper.dart';
+import 'Screens/stepper.dart';
 import './Screens/trending_screen.dart';
 import './Widgets/custom_fab.dart';
 import './constants.dart';
@@ -31,6 +31,7 @@ class _WrapperState extends State<Wrapper> {
     Navigator.of(context).push(MaterialPageRoute(
         builder: (context) => StepperDemo.init(username: "Pablo")));
   }
+
 
   @override
   Widget build(BuildContext context) {
