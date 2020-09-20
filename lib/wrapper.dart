@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './Screens/home_screen.dart';
+import './stepper.dart';
 import './Screens/trending_screen.dart';
 import './Widgets/custom_fab.dart';
 import './constants.dart';
@@ -24,6 +25,11 @@ class _WrapperState extends State<Wrapper> {
     setState(() {
       _selectedIndex = index;
     });
+  }
+
+  void _navigateToNextScreen(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => StepperDemo.init(username: "Pablo")));
   }
 
   @override
@@ -55,12 +61,13 @@ class _WrapperState extends State<Wrapper> {
         onTap: _onItemTapped,
       ),
       floatingActionButton: CustomFAB(
-        buttonColor: kPink,
-        buttonSize: 70.0,
-        iconColor: kWhite,
-        iconSize: 36.0,
-        onTap: () {},
-      ),
+          buttonColor: kPink,
+          buttonSize: 70.0,
+          iconColor: kWhite,
+          iconSize: 36.0,
+          onTap: () {
+            _navigateToNextScreen(context);
+          }),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
