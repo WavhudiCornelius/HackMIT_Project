@@ -83,7 +83,7 @@ class PostCard extends StatelessWidget {
                   style: TextStyle(
                     color: kWhite,
                     fontSize: 22,
-                    fontWeight: FontWeight.w100,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
               ),

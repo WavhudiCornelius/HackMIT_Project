@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'constants.dart';
 import 'wrapper.dart';
 
 void main() {
@@ -12,17 +13,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // darkTheme: ThemeData.dark(),
       theme: ThemeData(
         textTheme: GoogleFonts.poppinsTextTheme(
-          Theme.of(context).textTheme,
-        ),
+            Theme.of(context).textTheme,
+            ),
       ),
+      debugShowCheckedModeBanner: false,
       title: 'SoWhy',
       home: Wrapper(),
-      // initialRoute: HomeScreen.route,
-      // routes: {
-      //   HomeScreen.route: (context) => HomeScreen(),
-      // },
     );
   }
 }
