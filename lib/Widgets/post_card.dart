@@ -9,10 +9,10 @@ class PostCard extends StatelessWidget {
     @required this.why2,
     @required this.why3,
     @required this.timeOfThePost,
-    @required this.deletePost,
-    @required this.editPost,
-    @required this.replyToPost,
-    @required this.onTap,
+    this.deletePost,
+    this.editPost,
+    this.replyToPost,
+    this.onTap,
     @required this.color,
     @required this.profilePhoto,
   });
@@ -59,7 +59,7 @@ class PostCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        username,
+                        username==null? 'username' : username,
                         style: TextStyle(color: kWhite, fontSize: 17.5),
                       ),
                       Text(
@@ -79,7 +79,7 @@ class PostCard extends StatelessWidget {
                   vertical: 12.0,
                 ),
                 child: Text(
-                  '"$post"',
+                  post == null ? 'post' : '"$post"',
                   style: TextStyle(
                     color: kWhite,
                     fontSize: 22,
@@ -88,21 +88,21 @@ class PostCard extends StatelessWidget {
                 ),
               ),
               Text(
-                '\u2022$why1',
+                why1 == null ? 'why1 comes here' : why1,
                 style: TextStyle(
                   color: kWhite,
                   fontSize: 17.5,
                 ),
               ),
               Text(
-                why2,
+                why2 == null ? 'why2 comes here' : why2,
                 style: TextStyle(
                   color: kWhite,
                   fontSize: 17.5,
                 ),
               ),
               Text(
-                why3,
+                why3 == null ? 'why3 comes here' : why3,
                 style: TextStyle(
                   color: kWhite,
                   fontSize: 17.5,
