@@ -13,7 +13,23 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: kDarkBlue,
       body: Container(
         child: Center(
-          child: PostCard(),
+          child: PostCard(
+            username: 'Ashish',
+            post: 'Chocolate is bad.',
+            why1: 'I dont know',
+            why2: 'I dont know',
+            why3: 'I dont know',
+            timeOfThePost: DateTime.now(),
+            deletePost: null,
+            editPost: null,
+            replyToPost: null,
+            onTap: () {},
+            color: kDarkGrey,
+            profilePhoto: Image.asset(
+              './1.jpg',
+              fit: BoxFit.cover,
+            ),
+          ),
         ),
 
         // child: FlatButton(
@@ -39,5 +55,4 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
- 
 }
