@@ -65,13 +65,13 @@ class _ViewPostsState extends State<ViewPosts> {
             Column(
               children: <Widget>[
                 PostCard(
-                  username: doc.data[widget.postsOf],
+                  username: widget.postsOf,
                   post: doc.data['post'],
                   why1: doc.data['why1'],
                   why2: doc.data['why2'],
                   why3: doc.data['why3'],
                   // timeOfThePost: doc.data['time'],
-                  timeOfThePost: DateTime.now(),
+                  timeOfThePost: doc.data['time'].toString(),
                   color: kDarkGrey,
                   profilePhoto: NetworkImage(
                     'http://images.askmen.com/1080x540/2016/01/25-021526-facebook_profile_picture_affects_chances_of_getting_hired.jpg',

@@ -20,7 +20,7 @@ class PostCard extends StatelessWidget {
   final void Function() deletePost, editPost, replyToPost, onTap;
   final Color color;
   final NetworkImage profilePhoto;
-  final DateTime timeOfThePost;
+  final String timeOfThePost;
 
   @override
   Widget build(BuildContext context) {
@@ -59,11 +59,11 @@ class PostCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        username==null? 'username' : username,
+                        username == null ? 'username' : username,
                         style: TextStyle(color: kWhite, fontSize: 17.5),
                       ),
                       Text(
-                        timeOfThePost.toString(),
+                        timeOfThePost,
                         style: TextStyle(
                           color: kLightGrey,
                           fontSize: 11.2,
