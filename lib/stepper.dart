@@ -1,6 +1,8 @@
 import 'package:HackMIT_Project/Services/posting.dart';
 import 'package:flutter/material.dart';
 
+import 'wrapper.dart';
+
 final Posting postData = Posting();
 String userName, post, why1, why2, why3;
 
@@ -32,16 +34,16 @@ class StepperDemoState extends State<StepperDemo> {
     Step(
       title: Text('Create a topic'),
       content: TextFormField(
-        // ignore: missing_return
         validator: (value) {
-          if (value.isEmpty) {
-            return "You can't have an empty name.";
-          }
-
-          if (value.length < 100) {
-            return "You need write a little bit.";
-          }
           post = value;
+          if (value.isEmpty) {
+            return "You can't have an empty name";
+          }
+          else if (value.length < 100) {
+            return "You need write a little bit";
+          }
+          else
+            return null;
         },
         decoration: InputDecoration(
             hintText: 'What are you thinking?',
@@ -52,20 +54,21 @@ class StepperDemoState extends State<StepperDemo> {
     Step(
       title: Text('Why?'),
       content: TextFormField(
-        // ignore: missing_return
-        validator: (value) {
-          if (value.isEmpty) {
-            return "You can't have an empty name.";
-          }
 
-          if (value.length < 40) {
-            return "You need write a little bit.";
-          }
+        validator: (value) {
           why1 = value;
+          if (value.isEmpty) {
+            return "You can't have an empty name";
+          }
+          else if (value.length < 40) {
+            return "You need write a little bit";
+          }
+          else
+            return null;
         },
         decoration: InputDecoration(
-            hintText: 'Tell us a little bit about it.',
-            helperText: '60 characters left.'),
+            hintText: 'Tell us a little bit about it',
+            helperText: '60 characters left'),
       ),
       isActive: true,
     ),
@@ -74,20 +77,20 @@ class StepperDemoState extends State<StepperDemo> {
       content: TextFormField(
         // ignore: missing_return
         validator: (value) {
-          if (value.isEmpty) {
-            return "You can't have an empty name.";
-          }
-
-          if (value.length < 20) {
-            return "You need write a little bit.";
-          }
           why2 = value;
+          if (value.isEmpty) {
+            return "You can't have an empty name";
+          }
+          else if (value.length < 20) {
+            return "You need write a little bit";
+          }
+          else
+            return null;
         },
         decoration: InputDecoration(
-            hintText: 'Just more a little bit.',
-            helperText: '100 characters left.'),
+            hintText: 'Just more a little bit',
+            helperText: '100 characters left'),
       ),
-      state: StepState.complete,
       isActive: true,
     ),
     Step(
@@ -95,20 +98,20 @@ class StepperDemoState extends State<StepperDemo> {
       content: TextFormField(
         // ignore: missing_return
         validator: (value) {
-          if (value.isEmpty) {
-            return "You can't have an empty name.";
-          }
-
-          if (value.length < 20) {
-            return "You need write a little bit.";
-          }
           why3 = value;
+          if (value.isEmpty) {
+            return "You can't have an empty name";
+          }
+          else if (value.length < 20) {
+            return "You need write a little bit";
+          }
+          else
+            return null;
         },
         decoration: InputDecoration(
             hintText: 'So, why?',
-            helperText: 'Did you think well? You can change the world if you want.'),
+            helperText: 'Did you think well?'),
       ),
-      state: StepState.complete,
       isActive: true,
     ),
   ];
@@ -137,7 +140,15 @@ class StepperDemoState extends State<StepperDemo> {
               if (currentStep < steps.length - 1) {
                 currentStep = currentStep + 1;
               } else {
-                submitData();
+                submitData() async {
+                  await postData.addPost(
+                    username: userName, 
+                    post: post, 
+                    why1: why1, 
+                    why2: why2, 
+                    why3: why3);
+                }
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => Wrapper()));
               }
             });
           },
