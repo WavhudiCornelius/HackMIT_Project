@@ -24,25 +24,26 @@ class StepperDemoState extends State<StepperDemo> {
 
   final Posting postData = Posting();
 
-  submitData() async {
-    await postData.addPost(
-        username: userName, post: post, why1: why1, why2: why2, why3: why3);
-  }
+  // submitData() async {
+  //   await postData.addPost(
+  //       username: userName, post: post, why1: why1, why2: why2, why3: why3);
+  // }
 
   int currentStep = 0;
   List<Step> steps = [
     Step(
       title: Text('Create a topic'),
       content: TextFormField(
+        onChanged: (value) {
+          post = value;
+        },
         validator: (value) {
           post = value;
           if (value.isEmpty) {
             return "You can't have an empty name";
-          }
-          else if (value.length < 100) {
+          } else if (value.length < 100) {
             return "You need write a little bit";
-          }
-          else
+          } else
             return null;
         },
         decoration: InputDecoration(
@@ -54,16 +55,16 @@ class StepperDemoState extends State<StepperDemo> {
     Step(
       title: Text('Why?'),
       content: TextFormField(
-
+        onChanged: (value) {
+          why1 = value;
+        },
         validator: (value) {
           why1 = value;
           if (value.isEmpty) {
             return "You can't have an empty name";
-          }
-          else if (value.length < 40) {
+          } else if (value.length < 40) {
             return "You need write a little bit";
-          }
-          else
+          } else
             return null;
         },
         decoration: InputDecoration(
@@ -76,15 +77,16 @@ class StepperDemoState extends State<StepperDemo> {
       title: Text('Why?'),
       content: TextFormField(
         // ignore: missing_return
+        onChanged: (value) {
+          why2 = value;
+        },
         validator: (value) {
           why2 = value;
           if (value.isEmpty) {
             return "You can't have an empty name";
-          }
-          else if (value.length < 20) {
+          } else if (value.length < 20) {
             return "You need write a little bit";
-          }
-          else
+          } else
             return null;
         },
         decoration: InputDecoration(
@@ -97,20 +99,20 @@ class StepperDemoState extends State<StepperDemo> {
       title: Text('Why?'),
       content: TextFormField(
         // ignore: missing_return
+        onChanged: (value) {
+          why3 = value;
+        },
         validator: (value) {
           why3 = value;
           if (value.isEmpty) {
             return "You can't have an empty name";
-          }
-          else if (value.length < 20) {
+          } else if (value.length < 20) {
             return "You need write a little bit";
-          }
-          else
+          } else
             return null;
         },
         decoration: InputDecoration(
-            hintText: 'So, why?',
-            helperText: 'Did you think well?'),
+            hintText: 'So, why?', helperText: 'Did you think well?'),
       ),
       isActive: true,
     ),
@@ -132,24 +134,23 @@ class StepperDemoState extends State<StepperDemo> {
           onStepTapped: (step) {
             setState(() {
               currentStep = step;
-              
             });
           },
           onStepContinue: () {
-            setState(() {
+            setState(() async {
               if (currentStep < steps.length - 1) {
                 currentStep = currentStep + 1;
               } else {
-                submitData() async {
-                  await postData.addPost(
-                    username: userName, 
-                    post: post, 
-                    why1: why1, 
-                    why2: why2, 
+                await postData.addPost(
+                    username: userName,
+                    post: post,
+                    why1: why1,
+                    why2: why2,
                     why3: why3);
-                }
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => Wrapper()));
               }
+
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => Wrapper()));
             });
           },
           onStepCancel: () {
