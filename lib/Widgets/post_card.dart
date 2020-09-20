@@ -87,26 +87,77 @@ class PostCard extends StatelessWidget {
                   ),
                 ),
               ),
-              Text(
-                why1 == null ? 'why1 comes here' : why1,
-                style: TextStyle(
-                  color: kWhite,
-                  fontSize: 17.5,
-                ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: CircleAvatar(
+                      radius: 16,
+                      child: Text(
+                        '1',
+                        style: TextStyle(
+                          color: kWhite,
+                        ),
+                      ),
+                      backgroundColor: kGrey,
+                    ),
+                  ),
+                  Text(
+                    why1 == null ? 'why1 comes here' : why1,
+                    style: TextStyle(
+                      color: kWhite,
+                      fontSize: 17.5,
+                    ),
+                  ),
+                ],
               ),
-              Text(
-                why2 == null ? 'why2 comes here' : why2,
-                style: TextStyle(
-                  color: kWhite,
-                  fontSize: 17.5,
-                ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: CircleAvatar(
+                      radius: 16,
+                      child: Text(
+                        '2',
+                        style: TextStyle(
+                          color: kWhite,
+                        ),
+                      ),
+                      backgroundColor: kGrey,
+                    ),
+                  ),
+                  Text(
+                    why2 == null ? 'why2 comes here' : why2,
+                    style: TextStyle(
+                      color: kWhite,
+                      fontSize: 17.5,
+                    ),
+                  ),
+                ],
               ),
-              Text(
-                why3 == null ? 'why3 comes here' : why3,
-                style: TextStyle(
-                  color: kWhite,
-                  fontSize: 17.5,
-                ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: CircleAvatar(
+                      radius: 16,
+                      child: Text(
+                        '3',
+                        style: TextStyle(
+                          color: kWhite,
+                        ),
+                      ),
+                      backgroundColor: kGrey,
+                    ),
+                  ),
+                  Text(
+                    why3 == null ? 'why3 comes here' : why3,
+                    style: TextStyle(
+                      color: kWhite,
+                      fontSize: 17.5,
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
