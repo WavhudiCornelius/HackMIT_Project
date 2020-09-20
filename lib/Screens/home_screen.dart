@@ -1,7 +1,8 @@
-import 'package:HackMIT_Project/Services/posting.dart';
-import 'package:HackMIT_Project/Widgets/custom_fab.dart';
-import '../constants.dart';
 import 'package:flutter/material.dart';
+
+import '../Services/posting.dart';
+import '../Widgets/post_card.dart';
+import '../constants.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String route = 'HomeScreen';
@@ -9,17 +10,12 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      backgroundColor: kDarkBlue,
       body: Container(
         child: Center(
-          child: CustomFAB(
-            buttonColor: kPink,
-            buttonSize: 70.0,
-            iconColor: kWhite,
-            iconSize: 36.0,
-            onTap: () {},
-          ),
+          child: PostCard(),
         ),
+
         // child: FlatButton(
         //     onPressed: () async {
         //       // await posting.addPost(

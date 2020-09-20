@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import "package:flutter_feather_icons/flutter_feather_icons.dart";
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 
 class CustomFAB extends StatelessWidget {
   const CustomFAB({
@@ -19,7 +19,7 @@ class CustomFAB extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: onTap,
       child: Container(
         width: buttonSize,
@@ -34,6 +34,13 @@ class CustomFAB extends StatelessWidget {
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: buttonColor,
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+              color: buttonColor.withOpacity(0.4),
+              offset: Offset(4, 4),
+              blurRadius: 20.0,
+            )
+          ],
         ),
       ),
     );
