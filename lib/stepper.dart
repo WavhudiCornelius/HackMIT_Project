@@ -136,21 +136,21 @@ class StepperDemoState extends State<StepperDemo> {
               currentStep = step;
             });
           },
-          onStepContinue: () {
-            setState(() async {
-              if (currentStep < steps.length - 1) {
+          onStepContinue: () async {
+            if (currentStep < steps.length - 1) {
+              setState(() {
                 currentStep = currentStep + 1;
-              } else {
-                await postData.addPost(
-                    username: userName,
-                    post: post,
-                    why1: why1,
-                    why2: why2,
-                    why3: why3);
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => Wrapper()));
-              }
-            });
+              });
+            } else {
+              await postData.addPost(
+                  username: userName,
+                  post: post,
+                  why1: why1,
+                  why2: why2,
+                  why3: why3);
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => Wrapper()));
+            }
           },
           onStepCancel: () {
             setState(() {
