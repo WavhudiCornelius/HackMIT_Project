@@ -9,3 +9,10 @@ We are creating a platform to encourage conversations with a methodology that se
 Our goal is to create an environment with deeper topics, with deeper conversations, a place where people need to think hard before posting a topic. When we make our platform with deeper topics, then people should also respond to topics more deeply. 
 A summary of the project: we are looking to use this methodology to make people with opposing opinions come to a consensus or just understand the other side.
 
+## Screenshots
+
+<img src="https://github.com/WavhudiCornelius/HackMIT_Project/blob/master/screenshots/screenshot1.jpg" width=288 height=640 />
+
+<img src="https://github.com/WavhudiCornelius/HackMIT_Project/blob/master/screenshots/screenshot2.jpg" width=295 height=640 />
+
+
