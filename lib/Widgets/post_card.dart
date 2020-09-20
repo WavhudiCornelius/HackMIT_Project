@@ -1,3 +1,4 @@
+import 'package:HackMIT_Project/constants.dart';
 import 'package:flutter/material.dart';
 
 class PostCard extends StatelessWidget {
@@ -18,7 +19,7 @@ class PostCard extends StatelessWidget {
   final String username, post, why1, why2, why3;
   final void Function() deletePost, editPost, replyToPost, onTap;
   final Color color;
-  final Image profilePhoto;
+  final NetworkImage profilePhoto;
   final DateTime timeOfThePost;
 
   @override
@@ -26,11 +27,13 @@ class PostCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: 12.0,
+        vertical: 6.0,
       ),
       child: GestureDetector(
         onTap: onTap,
         child: Container(
-          // height: 140.0,
+          height: 300,
+          padding: EdgeInsets.all(12),
           decoration: BoxDecoration(
             color: color,
             borderRadius: BorderRadius.all(
@@ -38,26 +41,73 @@ class PostCard extends StatelessWidget {
             ),
           ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  CircleAvatar(
-                    child: profilePhoto,
+                  Padding(
+                    padding: EdgeInsets.only(right: 12),
+                    child: CircleAvatar(
+                      radius: 26.0,
+                      backgroundImage: profilePhoto,
+                      backgroundColor: Colors.transparent,
+                    ),
                   ),
                   Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(username),
+                      Text(
+                        username,
+                        style: TextStyle(color: kWhite, fontSize: 17.5),
+                      ),
                       Text(
                         timeOfThePost.toString(),
+                        style: TextStyle(
+                          color: kLightGrey,
+                          fontSize: 11.2,
+                          fontWeight: FontWeight.w100,
+                        ),
                       ),
                     ],
                   ),
                 ],
               ),
-              Text(post),
-              Text(why1),
-              Text(why2),
-              Text(why3),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 12.0,
+                ),
+                child: Text(
+                  '"$post"',
+                  style: TextStyle(
+                    color: kWhite,
+                    fontSize: 22,
+                    fontWeight: FontWeight.w100,
+                  ),
+                ),
+              ),
+              Text(
+                '\u2022$why1',
+                style: TextStyle(
+                  color: kWhite,
+                  fontSize: 17.5,
+                ),
+              ),
+              Text(
+                why2,
+                style: TextStyle(
+                  color: kWhite,
+                  fontSize: 17.5,
+                ),
+              ),
+              Text(
+                why3,
+                style: TextStyle(
+                  color: kWhite,
+                  fontSize: 17.5,
+                ),
+              ),
             ],
           ),
         ),
