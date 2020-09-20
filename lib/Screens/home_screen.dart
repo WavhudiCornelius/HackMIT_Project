@@ -1,3 +1,4 @@
+import 'package:HackMIT_Project/Services/viewposts.dart';
 import 'package:flutter/material.dart';
 
 import '../Services/posting.dart';
@@ -13,46 +14,50 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: kDarkBlue,
       body: Container(
         child: Center(
-          child: PostCard(
-            username: 'Ashish',
-            post: 'Chocolate is bad.',
-            why1: 'I dont know',
-            why2: 'I dont know',
-            why3: 'I dont know',
-            timeOfThePost: DateTime.now(),
-            deletePost: null,
-            editPost: null,
-            replyToPost: null,
-            onTap: () {},
-            color: kDarkGrey,
-            profilePhoto: Image.asset(
-              './1.jpg',
-              fit: BoxFit.cover,
-            ),
+          child: ViewPosts(
+            postsOf: 'Pablo',
+            username: 'Pablo',
           ),
-        ),
+          //     child: PostCard(
+          //       username: 'Ashish',
+          //       post: 'Chocolate is bad.',
+          //       why1: 'I dont know',
+          //       why2: 'I dont know',
+          //       why3: 'I dont know',
+          //       timeOfThePost: DateTime.now(),
+          //       deletePost: null,
+          //       editPost: null,
+          //       replyToPost: null,
+          //       onTap: () {},
 
-        // child: FlatButton(
-        //     onPressed: () async {
-        //       // await posting.addPost(
-        //       // username: 'ajay',
-        //       // post: 'this post',
-        //       // why1: 'hello',
-        //       // why2: 'hhehe',
-        //       // why3: 'plss');
-        //       await posting.replyPost(
-        //           postedUserName: 'ajay',
-        //           replierName: 'ashish',
-        //           docId: 'FFsTqHRU38pzI1sGkcuMX',
-        //           reply: 'this post',
-        //           why1: 'hello',
-        //           why2: 'hhehe',
-        //           why3: 'plss');
-        //       // await posting.deletePost(
-        //       //     username: 'ajay', docId: 'Bwim9RHEZ6ZMQeEGBdYE');
-        //     },
-        //     child: Text('test')),
+          //       // profilePhoto: Image.asset(
+          //       //   './1.jpg',
+          //       // fit: BoxFit.cover,
+        ),
       ),
+      // ),
+
+      // child: FlatButton(
+      //     onPressed: () async {
+      //       // await posting.addPost(
+      //       // username: 'ajay',
+      //       // post: 'this post',
+      //       // why1: 'hello',
+      //       // why2: 'hhehe',
+      //       // why3: 'plss');
+      //       await posting.replyPost(
+      //           postedUserName: 'ajay',
+      //           replierName: 'ashish',
+      //           docId: 'FFsTqHRU38pzI1sGkcuMX',
+      //           reply: 'this post',
+      //           why1: 'hello',
+      //           why2: 'hhehe',
+      //           why3: 'plss');
+      //       // await posting.deletePost(
+      //       //     username: 'ajay', docId: 'Bwim9RHEZ6ZMQeEGBdYE');
+      //     },
+      //     child: Text('test')),
+      // ),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:HackMIT_Project/constants.dart';
 import 'package:flutter/material.dart';
 
 class PostCard extends StatelessWidget {
@@ -8,17 +9,16 @@ class PostCard extends StatelessWidget {
     @required this.why2,
     @required this.why3,
     @required this.timeOfThePost,
-    @required this.deletePost,
-    @required this.editPost,
-    @required this.replyToPost,
-    @required this.onTap,
-    @required this.color,
-    @required this.profilePhoto,
+    this.deletePost,
+    this.editPost,
+    this.replyToPost,
+    this.onTap,
+    // @required this.profilePhoto,
   });
   final String username, post, why1, why2, why3;
   final void Function() deletePost, editPost, replyToPost, onTap;
-  final Color color;
-  final Image profilePhoto;
+  final Color color = kDarkGrey;
+  // final Image profilePhoto;
   final DateTime timeOfThePost;
 
   @override
@@ -41,12 +41,12 @@ class PostCard extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  CircleAvatar(
-                    child: profilePhoto,
-                  ),
+                  // CircleAvatar(
+                  //   child: profilePhoto,
+                  // ),
                   Column(
                     children: [
-                      Text(username),
+                      Text(username == null ? 'text' : username),
                       Text(
                         timeOfThePost.toString(),
                       ),
@@ -54,10 +54,10 @@ class PostCard extends StatelessWidget {
                   ),
                 ],
               ),
-              Text(post),
-              Text(why1),
-              Text(why2),
-              Text(why3),
+              Text(post == null ? 'post' : post),
+              Text(why1 == null ? 'why1 comes here' : why1),
+              Text(why2 == null ? 'why2 comes here' : why2),
+              Text(why3 == null ? 'why3 comes here' : why3),
             ],
           ),
         ),

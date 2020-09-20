@@ -4,14 +4,14 @@ import '../constants.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class ViewRequests extends StatefulWidget {
+class ViewPosts extends StatefulWidget {
   final String postsOf, username;
-  ViewRequests({this.postsOf, this.username});
+  ViewPosts({this.postsOf, this.username});
   @override
-  _ViewRequestsState createState() => _ViewRequestsState();
+  _ViewPostsState createState() => _ViewPostsState();
 }
 
-class _ViewRequestsState extends State<ViewRequests> {
+class _ViewPostsState extends State<ViewPosts> {
   final CollectionReference usersData = Firestore.instance.collection('users');
   final Posting postsData = Posting();
 
@@ -74,6 +74,8 @@ class _ViewRequestsState extends State<ViewRequests> {
                 why1: doc.data['why1'],
                 why2: doc.data['why2'],
                 why3: doc.data['why3'],
+                // timeOfThePost: doc.data['time'],
+                timeOfThePost: DateTime.now(),
                 deletePost: delete,
                 editPost: edit,
                 replyToPost: reply,
